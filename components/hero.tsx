@@ -54,7 +54,7 @@ export function Hero() {
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
         <div className="container mx-auto px-6 max-w-6xl">
-          <h1 className="hero-title font-bold text-4xl md:text-6xl lg:text-7xl mb-8 leading-tight">{splitTitle}</h1>
+          <h1 className="hero-title font-bold text-4xl md:text-6xl mb-8 leading-tight lg:text-8xl">{splitTitle}</h1>
           <motion.p
             className="hero-subtitle text-lg md:text-xl lg:text-2xl mb-12 text-neutral-300 max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
