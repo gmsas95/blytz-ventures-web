@@ -15,7 +15,7 @@ const ventures = [
     image: "/placeholder-0wpft.png",
     icon: Smartphone,
     color: "from-cyan-500 to-blue-500",
-    href: "#",
+    href: "http://live.blytzventures.com/",
   },
   {
     title: "Blytz Biotech",
@@ -26,7 +26,7 @@ const ventures = [
     image: "/biotech-mycelium-research.png",
     icon: Microscope,
     color: "from-green-500 to-emerald-500",
-    href: "#",
+    href: "http://biotech.blytzventures.com/",
   },
 ]
 
