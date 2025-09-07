@@ -2,7 +2,6 @@
 
 import { Suspense, useRef } from "react"
 import { Canvas } from "@react-three/fiber"
-import { motion } from "framer-motion"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { Scene } from "@/components/scene"
@@ -32,6 +31,25 @@ export function Hero() {
           { scale: 1, opacity: 1, duration: 0.8, ease: "elastic.out(1, 0.5)" },
           "-=0.5",
         )
+        .set(".hero-button", {
+          transformOrigin: "center",
+          cursor: "pointer",
+        })
+
+      gsap.utils.toArray(".hero-button").forEach((button: any) => {
+        button.addEventListener("mouseenter", () => {
+          gsap.to(button, { scale: 1.05, duration: 0.2, ease: "power2.out" })
+        })
+        button.addEventListener("mouseleave", () => {
+          gsap.to(button, { scale: 1, duration: 0.2, ease: "power2.out" })
+        })
+        button.addEventListener("mousedown", () => {
+          gsap.to(button, { scale: 0.95, duration: 0.1 })
+        })
+        button.addEventListener("mouseup", () => {
+          gsap.to(button, { scale: 1.05, duration: 0.1 })
+        })
+      })
     },
     { scope: container },
   )
@@ -55,33 +73,20 @@ export function Hero() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
         <div className="container mx-auto px-6 max-w-6xl">
           <h1 className="hero-title font-bold text-4xl md:text-6xl mb-8 leading-tight lg:text-8xl">{splitTitle}</h1>
-          <motion.p
-            className="hero-subtitle text-lg md:text-xl lg:text-2xl mb-12 text-neutral-300 max-w-4xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-          >
+          <p className="hero-subtitle text-lg md:text-xl lg:text-2xl mb-12 text-neutral-300 max-w-4xl mx-auto">
             Blytz Ventures creates and scales innovative solutions across technology, biotech, and beyond — driving
             impact from Southeast Asia to the world.
-          </motion.p>
+          </p>
           <div className="hero-buttons flex flex-col sm:flex-row gap-6 justify-center">
             <TransitionLink href="/#ventures">
-              <motion.button
-                className="flex items-center justify-center gap-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold py-4 px-8 rounded-full transition-all duration-300 min-w-[200px]"
-                whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 300 } }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <button className="hero-button flex items-center justify-center gap-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold py-4 px-8 rounded-full transition-colors duration-300 min-w-[200px]">
                 Explore Our Ventures <ArrowRight size={20} />
-              </motion.button>
+              </button>
             </TransitionLink>
             <TransitionLink href="/#contact">
-              <motion.button
-                className="flex items-center justify-center gap-3 border-2 border-white text-white hover:bg-white hover:text-black font-semibold py-4 px-8 rounded-full transition-all duration-300 min-w-[200px]"
-                whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 300 } }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <button className="hero-button flex items-center justify-center gap-3 border-2 border-white text-white hover:bg-white hover:text-black font-semibold py-4 px-8 rounded-full transition-colors duration-300 min-w-[200px]">
                 Partner With Us
-              </motion.button>
+              </button>
             </TransitionLink>
           </div>
         </div>
