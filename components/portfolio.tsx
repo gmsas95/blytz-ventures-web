@@ -49,6 +49,8 @@ export function Portfolio() {
                   src={project.imgSrc || "/placeholder.svg"}
                   fill
                   alt={project.title}
+                  sizes="(max-width: 1024px) 50vw, 33vw"
+                  priority={index === 0}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
