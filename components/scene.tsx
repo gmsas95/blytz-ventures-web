@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useMemo, useState, useEffect, Suspense } from "react"
+import { useRef, useMemo, useState, useEffect } from "react"
 import { useFrame, useThree } from "@react-three/fiber"
 import { useFBO } from "@react-three/drei"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
@@ -21,7 +21,7 @@ function useDeviceCapabilities() {
     setCapabilities({
       isMobile,
       isLowEnd,
-      particleCount: isLowEnd ? 128 : 256, // Reduce particles on low-end devices
+      particleCount: isLowEnd ? 128 : 512, // Reduce particles on low-end devices
       enablePostProcessing: !isLowEnd, // Disable post-processing on low-end devices
     })
   }, [])
@@ -194,16 +194,14 @@ export function Scene() {
     <>
       <points ref={pointsRef}>
         <bufferGeometry>
-          <bufferAttribute args={[particlePositions, 3]} attach="attributes-position" />
+          <bufferAttribute attach="attributes-position" count={size * size} array={particlePositions} itemSize={3} />
         </bufferGeometry>
         <primitive object={renderMaterial} attach="material" />
       </points>
       {enablePostProcessing && (
-        <Suspense fallback={null}>
-          <EffectComposer>
-            <Bloom intensity={0.3} luminanceThreshold={0.2} luminanceSmoothing={0.9} height={isMobile ? 512 : 1024} />
-          </EffectComposer>
-        </Suspense>
+        <EffectComposer>
+          <Bloom intensity={0.3} luminanceThreshold={0.2} luminanceSmoothing={0.9} height={isMobile ? 512 : 1024} />
+        </EffectComposer>
       )}
     </>
   )

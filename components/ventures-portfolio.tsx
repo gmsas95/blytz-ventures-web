@@ -59,8 +59,6 @@ export function VenturesPortfolio() {
                       src={venture.image || "/placeholder.svg"}
                       fill
                       alt={venture.title}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      priority={index === 0}
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-br ${venture.color} opacity-20`} />
