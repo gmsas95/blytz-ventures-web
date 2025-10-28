@@ -29,12 +29,12 @@ export function Footer() {
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <TransitionLink href="#" className="text-neutral-400 hover:text-white">
-              Twitter
+              Threads
             </TransitionLink>
             <TransitionLink href="#" className="text-neutral-400 hover:text-white">
               Instagram
             </TransitionLink>
-            <TransitionLink href="#" className="text-neutral-400 hover:text-white">
+            <TransitionLink href="https://linkedin.com/company/blytz-ventures" className="text-neutral-400 hover:text-white">
               LinkedIn
             </TransitionLink>
           </div>
