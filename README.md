@@ -1,30 +1,48 @@
-# awwwards site
+# Blytz Ventures
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Official company landing page for Blytz Ventures — building the future, one venture at a time.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gmsas94s-projects/v0-awwwards-site)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/HCdqWhwObpv)
+Built with [Astro](https://astro.build) for blazing-fast performance.
 
-## Overview
+## Tech Stack
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+- **Astro** — Static site generation
+- **Tailwind CSS** — Utility-first styling
+- **CSS Animations** — Lightweight, no-JS animations
 
-## Deployment
+## Getting Started
 
-Your project is live at:
+```bash
+# Install dependencies
+pnpm install
 
-**[https://vercel.com/gmsas94s-projects/v0-awwwards-site](https://vercel.com/gmsas94s-projects/v0-awwwards-site)**
+# Start dev server
+pnpm dev
 
-## Build your app
+# Build for production
+pnpm build
 
-Continue building your app on:
+# Preview production build
+pnpm preview
+```
 
-**[https://v0.app/chat/projects/HCdqWhwObpv](https://v0.app/chat/projects/HCdqWhwObpv)**
+## Structure
 
-## How It Works
+```
+src/
+├── components/     # Reusable UI components
+├── layouts/        # Page layout wrapper
+├── pages/          # Route-based pages
+└── styles/         # Global CSS
+```
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Ventures
+
+- **Blytz Live** — Live auction platform
+- **Blytz Digital** — Digital services & web development
+- **Blytz Media** — Content creation & entertainment
+- **Blytz Labs** — R&D and emerging tech
+
+---
+
+Deployed on Vercel.
