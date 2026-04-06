@@ -1,99 +1,119 @@
 ---
+const ventures = [
+  {
+    name: "Blytz Cloud",
+    tagline: "AI Assistant Platform",
+    description: "Platform for deploying personalized OpenClaw AI assistants via Telegram.",
+    url: "https://blytz.cloud",
+    color: "cyan",
+    tags: ["Go", "Docker", "Stripe"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />`
+  },
+  {
+    name: "Blytz Marketplace",
+    tagline: "E-Commerce / Live Auction",
+    description: "E-commerce with live auctions, real-time bidding, Stripe Connect.",
+    url: "https://blytz.market",
+    color: "yellow",
+    tags: ["Go", "Next.js", "Stripe"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />`
+  },
+  {
+    name: "Blytz Work",
+    tagline: "Talent Matching",
+    description: "Fastest job matching platform. From job posted to hired in under 1 hour.",
+    url: "https://blytz.work",
+    color: "purple",
+    tags: ["Node.js", "Next.js", "Firebase"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />`
+  },
+  {
+    name: "Blytz Site",
+    tagline: "Website Builder",
+    description: "Website builder and management platform with custom plugins.",
+    url: "https://blytz.site",
+    color: "emerald",
+    tags: ["Go", "Next.js", "Caddy"],
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />`
+  }
+];
+
+const colorClasses = {
+  cyan: {
+    bg: "bg-cyan-500/20",
+    text: "text-cyan-400",
+    border: "border-cyan-500/30 hover:border-cyan-500/60",
+    glow: "hover:shadow-cyan-500/20"
+  },
+  yellow: {
+    bg: "bg-yellow-500/20",
+    text: "text-yellow-400",
+    border: "border-yellow-500/30 hover:border-yellow-500/60",
+    glow: "hover:shadow-yellow-500/20"
+  },
+  purple: {
+    bg: "bg-purple-500/20",
+    text: "text-purple-400",
+    border: "border-purple-500/30 hover:border-purple-500/60",
+    glow: "hover:shadow-purple-500/20"
+  },
+  emerald: {
+    bg: "bg-emerald-500/20",
+    text: "text-emerald-400",
+    border: "border-emerald-500/30 hover:border-emerald-500/60",
+    glow: "hover:shadow-emerald-500/20"
+  }
+};
 ---
 
 <section id="ventures" class="py-24 md:py-32 bg-[#0a0a0a]">
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="text-center mb-20">
-      <h2 class="text-4xl md:text-6xl font-bold mb-8">Our <span class="gradient-text">Ventures</span></h2>
+      <span class="inline-block mb-4 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-400 text-sm font-medium">
+        Our Portfolio
+      </span>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Our <span class="gradient-text">Ventures</span>
+      </h2>
       <p class="text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto leading-relaxed">
-        Our portfolio of platforms driving innovation across Southeast Asia.
+        Building and scaling innovative platforms across Southeast Asia.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Blytz Cloud -->
-      <a href="https://blytz.cloud" target="_blank" rel="noopener noreferrer" class="group block h-full">
-        <div class="bg-[#0f0f0f] rounded-xl overflow-hidden border border-neutral-800 hover:border-cyan-500/50 transition-all duration-300 h-full p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center">
-              <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+      {ventures.map((venture, index) => (
+        <a 
+          href={venture.url} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="group block h-full cursor-pointer"
+        >
+          <div class={`glass-card rounded-xl overflow-hidden transition-all duration-300 hover-lift h-full p-6 ${colorClasses[venture.color as keyof typeof colorClasses].border} ${colorClasses[venture.color as keyof typeof colorClasses].glow} hover:shadow-xl`}>
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
+                <div class={`w-12 h-12 ${colorClasses[venture.color as keyof typeof colorClasses].bg} rounded-xl flex items-center justify-center`}>
+                  <svg class={`w-6 h-6 ${colorClasses[venture.color as keyof typeof colorClasses].text}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" set:html={venture.icon} />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold group-hover:text-white/90 transition-colors">{venture.name}</h3>
+                  <span class={`text-sm ${colorClasses[venture.color as keyof typeof colorClasses].text}`}>{venture.tagline}</span>
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-neutral-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </div>
-            <div>
-              <h3 class="text-xl font-bold">Blytz Cloud</h3>
-              <span class="text-xs text-cyan-400">AI Assistant Platform</span>
-            </div>
-          </div>
-          <p class="text-sm text-neutral-400 mb-4">Platform for deploying personalized OpenClaw AI assistants via Telegram.</p>
-          <div class="flex items-center gap-2 text-xs text-neutral-500">
-            <span class="px-2 py-1 bg-neutral-800 rounded">Go</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Docker</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Stripe</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Blytz Marketplace -->
-      <a href="https://blytz.market" target="_blank" rel="noopener noreferrer" class="group block h-full">
-        <div class="bg-[#0f0f0f] rounded-xl overflow-hidden border border-neutral-800 hover:border-yellow-500/50 transition-all duration-300 h-full p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
-              <svg class="w-5 h-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">Blytz Marketplace</h3>
-              <span class="text-xs text-yellow-400">E-Commerce / Live Auction</span>
+            <p class="text-neutral-400 mb-6 leading-relaxed">{venture.description}</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              {venture.tags.map((tag) => (
+                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-neutral-400 font-medium border border-white/5">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
-          <p class="text-sm text-neutral-400 mb-4">E-commerce with live auctions, real-time bidding, Stripe Connect.</p>
-          <div class="flex items-center gap-2 text-xs text-neutral-500">
-            <span class="px-2 py-1 bg-neutral-800 rounded">Go</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Next.js</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Stripe</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Blytz Work -->
-      <a href="https://blytz.work" target="_blank" rel="noopener noreferrer" class="group block h-full">
-        <div class="bg-[#0f0f0f] rounded-xl overflow-hidden border border-neutral-800 hover:border-purple-500/50 transition-all duration-300 h-full p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
-              <svg class="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">Blytz Work</h3>
-              <span class="text-xs text-purple-400">Talent Matching</span>
-            </div>
-          </div>
-          <p class="text-sm text-neutral-400 mb-4">Fastest job matching platform. From job posted to hired in under 1 hour.</p>
-          <div class="flex items-center gap-2 text-xs text-neutral-500">
-            <span class="px-2 py-1 bg-neutral-800 rounded">Node.js</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Next.js</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Firebase</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Blytz Site -->
-      <a href="https://blytz.site" target="_blank" rel="noopener noreferrer" class="group block h-full">
-        <div class="bg-[#0f0f0f] rounded-xl overflow-hidden border border-neutral-800 hover:border-green-500/50 transition-all duration-300 h-full p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
-              <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">Blytz Site</h3>
-              <span class="text-xs text-green-400">Website Builder</span>
-            </div>
-          </div>
-          <p class="text-sm text-neutral-400 mb-4">Website builder and management platform with custom plugins.</p>
-          <div class="flex items-center gap-2 text-xs text-neutral-500">
-            <span class="px-2 py-1 bg-neutral-800 rounded">Go</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Next.js</span>
-            <span class="px-2 py-1 bg-neutral-800 rounded">Caddy</span>
-          </div>
-        </div>
-      </a>
+        </a>
+      ))}
     </div>
   </div>
 </section>
