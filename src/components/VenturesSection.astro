@@ -1,34 +1,50 @@
 ---
 const ventures = [
-  { name: "Blytz Cloud", tagline: "AI Assistant Platform", url: "https://blytz.cloud" },
-  { name: "Blytz Marketplace", tagline: "E-Commerce & Live Auctions", url: "https://blytz.market" },
-  { name: "Blytz Work", tagline: "Fastest Job Matching", url: "https://blytz.work" },
-  { name: "Blytz Site", tagline: "Website Builder Platform", url: "https://blytz.site" }
+  { name: "Blytz Cloud", tagline: "AI Assistant Platform", url: "https://blytz.cloud", desc: "Deploy personalized AI assistants via Telegram", icon: "🤖" },
+  { name: "Blytz Marketplace", tagline: "E-Commerce & Live Auctions", url: "https://blytz.market", desc: "Real-time bidding & Stripe Connect", icon: "🛒" },
+  { name: "Blytz Work", tagline: "Fastest Job Matching", url: "https://blytz.work", desc: "From job posted to hired in 1 hour", icon: "💼" },
+  { name: "Blytz Site", tagline: "Website Builder Platform", url: "https://blytz.site", desc: "Build websites with custom plugins", icon: "🌐" }
 ];
 ---
 
-<section id="ventures" class="section-padding bg-slate-50">
+<section id="ventures" class="section-padding bg-white">
   <div class="container-max">
-    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center animate-in">
-      Our Companies
-    </h2>
-    <p class="text-slate-600 mb-12 text-center animate-in-up">
-      We're building across AI, e-commerce, talent, and web platforms.
-    </p>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-4 animate-in">
+        Our Companies
+      </h2>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto animate-in-up">
+        We're building across AI, e-commerce, talent, and web platforms.
+      </p>
+    </div>
     
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {ventures.map((venture, i) => (
         <a 
           href={venture.url} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="group block p-6 bg-white rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer animate-in"
-          style={`animation-delay: ${i * 100}ms`}
+          class="group relative bg-slate-900 rounded-2xl p-8 card-hover cursor-pointer overflow-hidden animate-in"
+          style={`animation-delay: ${i * 150}ms`}
         >
-          <h3 class="text-lg font-semibold text-slate-900 group-hover:text-sky-600 transition-colors">
-            {venture.name}
-          </h3>
-          <p class="text-sm text-slate-500 mt-1">{venture.tagline}</p>
+          <!-- Background gradient -->
+          <div class="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div class="relative z-10">
+            <div class="text-4xl mb-4">{venture.icon}</div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+              {venture.name}
+            </h3>
+            <p class="text-sky-400 text-sm font-medium mb-3">{venture.tagline}</p>
+            <p class="text-slate-400 text-sm">{venture.desc}</p>
+            
+            <div class="mt-6 flex items-center gap-2 text-sm text-slate-500 group-hover:text-white transition-colors">
+              <span>Learn more</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
         </a>
       ))}
     </div>
