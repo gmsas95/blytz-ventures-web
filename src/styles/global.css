@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-white text-slate-900 antialiased;
+    @apply bg-black text-white antialiased;
     font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
   }
 
@@ -19,11 +19,11 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-rose-400 to-rose-600 bg-clip-text text-transparent;
   }
 
   .gradient-text-hero {
-    @apply bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-rose-300 via-rose-400 to-pink-400 bg-clip-text text-transparent;
   }
 
   .section-padding {
@@ -35,11 +35,11 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-slate-900 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-slate-800 hover:shadow-xl hover:scale-105 cursor-pointer;
+    @apply inline-flex items-center justify-center bg-rose-500 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-rose-400 hover:shadow-lg hover:shadow-rose-500/30 hover:scale-105 cursor-pointer;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center border-2 border-slate-200 text-slate-700 font-medium py-4 px-8 rounded-full transition-all duration-300 hover:border-slate-400 hover:bg-slate-50 cursor-pointer;
+    @apply inline-flex items-center justify-center border-2 border-rose-500/50 text-rose-300 font-medium py-4 px-8 rounded-full transition-all duration-300 hover:bg-rose-500/10 hover:border-rose-400 cursor-pointer;
   }
 
   .card-hover {
@@ -47,7 +47,7 @@
   }
 
   .card-hover:hover {
-    @apply -translate-y-2 shadow-2xl;
+    @apply -translate-y-2 shadow-2xl shadow-rose-500/20;
   }
 }
 
@@ -56,7 +56,7 @@
 }
 
 ::selection {
-  @apply bg-sky-200 text-slate-900;
+  @apply bg-rose-500/30 text-white;
 }
 
 @keyframes float {

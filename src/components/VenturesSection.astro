@@ -7,13 +7,13 @@ const ventures = [
 ];
 ---
 
-<section id="ventures" class="section-padding bg-white">
+<section id="ventures" class="section-padding bg-zinc-950">
   <div class="container-max">
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-4 animate-in">
+      <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 animate-in">
         Our Companies
       </h2>
-      <p class="text-xl text-slate-600 max-w-2xl mx-auto animate-in-up">
+      <p class="text-xl text-zinc-400 max-w-2xl mx-auto animate-in-up">
         We're building across AI, e-commerce, talent, and web platforms.
       </p>
     </div>
@@ -24,21 +24,21 @@ const ventures = [
           href={venture.url} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="group relative bg-slate-900 rounded-2xl p-8 card-hover cursor-pointer overflow-hidden animate-in"
+          class="group relative bg-zinc-900/50 rounded-2xl p-8 card-hover cursor-pointer overflow-hidden border border-zinc-800 hover:border-rose-500/50 animate-in"
           style={`animation-delay: ${i * 150}ms`}
         >
           <!-- Background gradient -->
-          <div class="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           
           <div class="relative z-10">
             <div class="text-4xl mb-4">{venture.icon}</div>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
               {venture.name}
             </h3>
-            <p class="text-sky-400 text-sm font-medium mb-3">{venture.tagline}</p>
-            <p class="text-slate-400 text-sm">{venture.desc}</p>
+            <p class="text-rose-400 text-sm font-medium mb-3">{venture.tagline}</p>
+            <p class="text-zinc-500 text-sm">{venture.desc}</p>
             
-            <div class="mt-6 flex items-center gap-2 text-sm text-slate-500 group-hover:text-white transition-colors">
+            <div class="mt-6 flex items-center gap-2 text-sm text-zinc-500 group-hover:text-white transition-colors">
               <span>Learn more</span>
               <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
