@@ -2,17 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-const success = Astro.url.searchParams.get('success') === '1';
-const error = Astro.url.searchParams.get('error');
-
-const fallbackMessage = success
-  ? 'Thanks, your message has been sent.'
-  : error === 'validation'
-    ? 'Please fill in every field with valid information.'
-    : error === 'server'
-      ? 'Something went wrong while saving your message. Please try again.'
-      : null;
 ---
 
 <Layout title="Contact - Blytz Ventures">
@@ -27,17 +16,13 @@ const fallbackMessage = success
           id="contact-form-status"
           class:list={[
             'mb-6 rounded-lg border px-4 py-3 text-sm',
-            fallbackMessage ? 'block' : 'hidden',
-            success
-              ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-200'
-              : 'border-red-500/40 bg-red-500/10 text-red-200',
+            'hidden',
+            'border-red-500/40 bg-red-500/10 text-red-200',
           ]}
           aria-live="polite"
-        >
-          {fallbackMessage}
-        </div>
+        />
 
-        <form action="/api/contact" method="post" class="space-y-6" data-contact-form>
+        <form class="space-y-6" data-contact-form>
           <div>
             <label for="name" class="block text-sm font-medium text-neutral-300 mb-2">Name</label>
             <input type="text" id="name" name="name" required minlength="2" maxlength="100" class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Your name" />
@@ -70,13 +55,11 @@ const fallbackMessage = success
   <Footer />
 </Layout>
 
-<script>
+<script lang="ts">
   const form = document.querySelector('[data-contact-form]');
   const status = document.querySelector('#contact-form-status');
-  const submitButton = document.querySelector('[data-submit-button]');
 
-  /** @type {(message: string, state: 'success' | 'error') => void} */
-  const setStatus = (message, state) => {
+  const setStatus = (message: string, state: 'success' | 'error') => {
     if (!status) return;
 
     status.textContent = message;
@@ -91,10 +74,10 @@ const fallbackMessage = success
     status.classList.add('border-red-500/40', 'bg-red-500/10', 'text-red-200');
   };
 
-  form?.addEventListener('submit', async (event) => {
+  form?.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (!(form instanceof HTMLFormElement) || !(submitButton instanceof HTMLButtonElement)) {
+    if (!(form instanceof HTMLFormElement)) {
       return;
     }
 
@@ -102,34 +85,6 @@ const fallbackMessage = success
       return;
     }
 
-    submitButton.disabled = true;
-    const originalLabel = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: {
-          Accept: 'application/json',
-        },
-      });
-
-      const payload = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        setStatus(payload.error ?? 'Unable to send your message right now. Please try again.', 'error');
-        return;
-      }
-
-      form.reset();
-      setStatus(payload.message ?? 'Thanks, your message has been sent.', 'success');
-      window.history.replaceState({}, '', '/contact?success=1');
-    } catch {
-      setStatus('Unable to send your message right now. Please try again.', 'error');
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = originalLabel ?? 'Send Message';
-    }
+    setStatus('The contact form UI is ready, but submissions are not connected on this deployment yet. Please try again later.', 'error');
   });
 </script>
