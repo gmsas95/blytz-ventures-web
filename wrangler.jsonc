@@ -11,7 +11,7 @@
     {
       "binding": "DB",
       "database_name": "blytz-ventures-db",
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "05ef8f99-de68-4dd1-b9c2-add943d9c36f",
       "migrations_dir": "./migrations"
     }
   ]

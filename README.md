@@ -34,7 +34,7 @@ npm run d1:migrate:local
 
 The `/contact` page posts to `POST /api/contact` and stores submissions in Cloudflare D1.
 
-Before local development or deployment, create the D1 database, replace the placeholder `database_id` in `wrangler.jsonc`, and apply the migration:
+Before local development or deployment, create the D1 database, set its `database_id` in `wrangler.jsonc`, and apply the migration:
 
 ```bash
 # Create the database once and copy the returned database_id into wrangler.jsonc
