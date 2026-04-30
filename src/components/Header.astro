@@ -1,14 +1,60 @@
 ---
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-amber-500/20">
-  <nav class="container-max flex justify-between items-center py-4">
-    <a href="/" class="flex items-center gap-2 text-white font-bold text-lg hover:text-amber-400 transition-colors cursor-pointer">
-      Blytz Ventures
+<header class="fixed top-0 left-0 right-0 z-50 px-6 py-5">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <a href="/" class="text-2xl font-extrabold text-white tracking-tight">
+      BLYTZ<span class="text-amber-400">.</span>
     </a>
-    <div class="hidden md:flex items-center gap-8 text-sm">
-      <a href="#ventures" class="text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer">Ventures</a>
-      <a href="/contact" class="text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer">Contact</a>
-    </div>
-  </nav>
+    
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="#ventures" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-300 relative group">
+        Ventures
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="/contact" class="text-sm font-medium text-white/60 hover:text-white transition-colors duration-300 relative group">
+        Contact
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </nav>
+    
+    <a href="/contact" class="hidden md:inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm font-bold hover:scale-105 transition-transform duration-300">
+      Let's Talk
+    </a>
+    
+    <!-- Mobile menu button -->
+    <button id="mobile-menu-btn" class="md:hidden w-12 h-12 flex items-center justify-center rounded-full bg-white/10 border border-white/20">
+      <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-b border-white/10 p-6">
+    <nav class="flex flex-col gap-6">
+      <a href="#ventures" class="text-2xl font-bold text-white">Ventures</a>
+      <a href="/contact" class="text-2xl font-bold text-white">Contact</a>
+      <a href="/contact" class="w-full bg-white text-black px-6 py-4 rounded-full text-sm font-bold text-center">Let's Talk</a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+  
+  // Header scroll effect
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      header?.classList.add('bg-black/80', 'backdrop-blur-2xl', 'border-b', 'border-white/10');
+    } else {
+      header?.classList.remove('bg-black/80', 'backdrop-blur-2xl', 'border-b', 'border-white/10');
+    }
+  });
+</script>

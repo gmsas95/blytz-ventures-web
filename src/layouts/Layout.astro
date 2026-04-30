@@ -18,19 +18,20 @@ const { title, description = "Blytz Ventures creates and scales innovative solut
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-black">
     <slot />
     <script>
       gsap.registerPlugin(ScrollTrigger);
       
-      gsap.utils.toArray('.animate-in').forEach((el: any) => {
+      // Scroll reveal animations
+      gsap.utils.toArray('.scroll-reveal').forEach((el) => {
         gsap.fromTo(el, 
-          { opacity: 0, y: 30 },
+          { opacity: 0, y: 40 },
           {
             opacity: 1,
             y: 0,
@@ -38,23 +39,24 @@ const { title, description = "Blytz Ventures creates and scales innovative solut
             ease: 'power2.out',
             scrollTrigger: {
               trigger: el,
-              start: 'top 80%',
+              start: 'top 85%',
             }
           }
         );
       });
       
-      gsap.utils.toArray('.animate-in-up').forEach((el: any) => {
+      gsap.utils.toArray('.scroll-reveal-delay').forEach((el, i) => {
         gsap.fromTo(el, 
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 40 },
           {
             opacity: 1,
             y: 0,
-            duration: 1,
-            ease: 'power3.out',
+            duration: 0.8,
+            delay: i * 0.1,
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: el,
-              start: 'top 75%',
+              start: 'top 85%',
             }
           }
         );

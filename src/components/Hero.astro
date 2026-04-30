@@ -1,61 +1,89 @@
 ---
 ---
 
-<section class="relative bg-black overflow-hidden">
-  <!-- Background decoration -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl opacity-50 animate-pulse-slow" style="animation-delay: 2s;"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-amber-950/30 to-transparent opacity-40"></div>
+<section class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background effects -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-20 left-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
+    <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-yellow-500/5 rounded-full blur-3xl opacity-50 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-amber-950/20 to-transparent opacity-40"></div>
     <!-- Grid pattern -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 80px 80px;"></div>
   </div>
 
-  <div class="container-max relative z-10 py-32 md:py-48 text-center">
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-sm font-medium mb-8 animate-in">
-      <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-      Startup Studio from Southeast Asia
-    </div>
-    
-    <h1 class="text-5xl md:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight animate-in">
-      Building the next generation of<br />
-      <span class="gradient-text-hero">Southeast Asian tech companies</span>
-    </h1>
-    
-    <p class="text-xl md:text-2xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-relaxed animate-in-up">
-      Blytz Ventures is a startup studio that builds, funds, and scales innovative companies. 
-      From AI assistants to talent platforms, we're creating the future.
-    </p>
-    
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in-up">
-      <a href="#ventures" class="btn-primary group text-lg">
-        See our companies
-        <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </a>
-      <a href="/contact" class="btn-secondary text-lg">
-        Get in touch
-      </a>
-    </div>
-
-    <!-- Stats -->
-    <div class="mt-24 grid grid-cols-3 gap-8 md:gap-16 max-w-3xl mx-auto animate-in-up">
-      <div class="text-center">
-        <div class="text-4xl md:text-5xl font-bold text-white">4</div>
-        <div class="text-zinc-500 mt-1">Companies</div>
+  <div class="container-max relative z-10 py-32 md:py-48">
+    <div class="max-w-[1200px]">
+      <!-- Badge -->
+      <div class="scroll-reveal inline-flex items-center gap-3 bg-white/5 border border-white/10 px-5 py-2.5 rounded-full mb-10">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+        </span>
+        <span class="text-sm font-medium text-white/70">Southeast Asia · 2024</span>
       </div>
-      <div class="text-center">
-        <div class="text-4xl md:text-5xl font-bold text-white">2024</div>
-        <div class="text-zinc-500 mt-1">Founded</div>
+      
+      <!-- Main headline -->
+      <h1 class="scroll-reveal text-hero text-white mb-10 text-balance">
+        BUILDING THE<br />
+        <span class="gradient-text-hero">NEXT GENERATION</span>
+      </h1>
+      
+      <!-- Bento stats row -->
+      <div class="scroll-reveal flex flex-wrap gap-4 mb-14">
+        <div class="bento-card px-8 py-6 flex items-center gap-5">
+          <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">04</span>
+          <div>
+            <span class="text-xs text-white/40 uppercase tracking-widest">Active Ventures</span>
+            <p class="text-lg font-semibold text-white">Companies</p>
+          </div>
+        </div>
+        
+        <div class="bento-card px-8 py-6 flex items-center gap-5">
+          <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">∞</span>
+          <div>
+            <span class="text-xs text-white/40 uppercase tracking-widest">Vision</span>
+            <p class="text-lg font-semibold text-white">Scalable Impact</p>
+          </div>
+        </div>
+        
+        <div class="bento-card px-8 py-6 flex items-center gap-5">
+          <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">SEA</span>
+          <div>
+            <span class="text-xs text-white/40 uppercase tracking-widest">Focus</span>
+            <p class="text-lg font-semibold text-white">Region</p>
+          </div>
+        </div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl md:text-5xl font-bold text-white">SEA</div>
-        <div class="text-zinc-500 mt-1">Focus</div>
+      
+      <!-- Subtitle -->
+      <p class="scroll-reveal text-subhero text-white/50 max-w-2xl mb-16">
+        Blytz Ventures is a startup studio that builds, funds, and scales innovative companies across Southeast Asia.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="scroll-reveal flex flex-wrap gap-5">
+        <a href="#ventures" class="btn-primary group text-lg">
+          <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          See our companies
+          <span class="ml-1 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white transition-transform group-hover:translate-x-1">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+        </a>
+        
+        <a href="/contact" class="btn-secondary group text-lg">
+          Get in touch
+          <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
-
-  <!-- Bottom wave -->
-  <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-zinc-900 to-transparent"></div>
+  
+  <!-- Bottom gradient fade -->
+  <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
 </section>

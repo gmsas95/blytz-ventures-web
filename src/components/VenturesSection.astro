@@ -1,44 +1,105 @@
 ---
 const ventures = [
-  { name: "Blytz Cloud", tagline: "AI Assistant Platform", url: "https://blytz.cloud", desc: "Deploy personalized AI assistants via Telegram", icon: "🤖" },
-  { name: "Blytz Marketplace", tagline: "E-Commerce & Live Auctions", url: "https://blytz.market", desc: "Real-time bidding & Stripe Connect", icon: "🛒" },
-  { name: "Blytz Work", tagline: "Fastest Job Matching", url: "https://blytz.work", desc: "From job posted to hired in 1 hour", icon: "💼" },
-  { name: "Blytz Site", tagline: "Website Builder Platform", url: "https://blytz.site", desc: "Build websites with custom plugins", icon: "🌐" }
+  { 
+    name: "Blytz Cloud", 
+    tagline: "AI Assistant Platform", 
+    url: "https://blytz.cloud", 
+    desc: "Deploy personalized AI assistants via Telegram", 
+    icon: "🤖",
+    gradient: "from-amber-400 to-yellow-300",
+    number: "01"
+  },
+  { 
+    name: "Blytz Marketplace", 
+    tagline: "E-Commerce & Live Auctions", 
+    url: "https://blytz.market", 
+    desc: "Real-time bidding & Stripe Connect", 
+    icon: "🛒",
+    gradient: "from-yellow-400 to-amber-300",
+    number: "02"
+  },
+  { 
+    name: "Blytz Work", 
+    tagline: "Fastest Job Matching", 
+    url: "https://blytz.work", 
+    desc: "From job posted to hired in 1 hour", 
+    icon: "💼",
+    gradient: "from-amber-300 to-orange-300",
+    number: "03"
+  },
+  { 
+    name: "Blytz Site", 
+    tagline: "Website Builder Platform", 
+    url: "https://blytz.site", 
+    desc: "Build websites with custom plugins", 
+    icon: "🌐",
+    gradient: "from-orange-300 to-amber-400",
+    number: "04"
+  }
 ];
 ---
 
-<section id="ventures" class="section-padding bg-zinc-950">
-  <div class="container-max">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 animate-in">
-        Our Companies
-      </h2>
-      <p class="text-xl text-zinc-400 max-w-2xl mx-auto animate-in-up">
-        We're building across AI, e-commerce, talent, and web platforms.
-      </p>
+<section id="ventures" class="section-padding bg-black relative overflow-hidden">
+  <!-- Subtle glow -->
+  <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none"></div>
+  
+  <div class="container-max relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+      <div class="lg:col-span-6">
+        <div class="scroll-reveal inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
+          <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+          <span class="text-xs font-semibold uppercase tracking-widest text-amber-400">Our Ventures</span>
+        </div>
+        <h2 class="scroll-reveal text-section text-white">
+          OUR<br />COMPANIES
+        </h2>
+      </div>
+      
+      <div class="lg:col-span-6 flex items-end">
+        <p class="scroll-reveal text-subhero text-white/50 max-w-2xl">
+          We're building across AI, e-commerce, talent, and web platforms. Each venture is designed to solve real problems at scale.
+        </p>
+      </div>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {ventures.map((venture, i) => (
         <a 
           href={venture.url} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="group relative bg-zinc-900/50 rounded-2xl p-8 card-hover cursor-pointer overflow-hidden border border-zinc-800 hover:border-amber-500/50 animate-in"
-          style={`animation-delay: ${i * 150}ms`}
+          class="scroll-reveal-delay group relative bento-card p-10 cursor-pointer overflow-hidden"
         >
-          <!-- Background gradient -->
-          <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <!-- Background gradient on hover -->
+          <div class={`absolute inset-0 bg-gradient-to-br ${venture.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+          
+          <!-- Large number -->
+          <span class={`text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br ${venture.gradient} opacity-10 absolute -top-4 -right-4`}>
+            {venture.number}
+          </span>
           
           <div class="relative z-10">
-            <div class="text-4xl mb-4">{venture.icon}</div>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
+            <div class="flex items-start justify-between mb-8">
+              <div class="text-5xl">{venture.icon}</div>
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                <svg class="w-5 h-5 text-white/50 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
+            </div>
+            
+            <h3 class="text-3xl font-extrabold text-white mb-2 tracking-tight group-hover:text-amber-400 transition-colors">
               {venture.name}
             </h3>
-            <p class="text-amber-400 text-sm font-medium mb-3">{venture.tagline}</p>
-            <p class="text-zinc-500 text-sm">{venture.desc}</p>
+            <p class={`text-lg font-semibold mb-4 bg-gradient-to-r ${venture.gradient} bg-clip-text text-transparent`}>
+              {venture.tagline}
+            </p>
+            <p class="text-white/50 text-base leading-relaxed">{venture.desc}</p>
             
-            <div class="mt-6 flex items-center gap-2 text-sm text-zinc-500 group-hover:text-white transition-colors">
+            <div class="mt-8 flex items-center gap-2 text-sm text-white/40 group-hover:text-white/70 transition-colors">
               <span>Learn more</span>
               <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

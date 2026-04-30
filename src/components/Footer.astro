@@ -1,26 +1,50 @@
 ---
 ---
 
-<footer class="bg-black border-t border-zinc-800">
-  <div class="container-max py-12">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="text-center md:text-left">
-        <div class="text-xl font-bold text-white mb-2">Blytz Ventures</div>
-        <p class="text-zinc-500 text-sm">Building the future of Southeast Asian tech</p>
+<footer class="bg-black border-t border-white/[0.06]">
+  <div class="container-max py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+      <div class="lg:col-span-2">
+        <h2 class="text-section text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+          HAVE A<br />PROJECT?
+        </h2>
+        <p class="text-xl text-white/50 mb-10 max-w-lg">
+          Let's create something amazing together. Get in touch to discuss your vision.
+        </p>
+        <a href="/contact" class="btn-primary group inline-flex">
+          Get in Touch
+          <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
       
-      <div class="flex flex-wrap gap-8 justify-center text-sm">
-        <a href="https://blytz.cloud" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer">Cloud</a>
-        <a href="https://blytz.market" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer">Marketplace</a>
-        <a href="https://blytz.work" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer">Work</a>
-        <a href="https://blytz.site" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer">Site</a>
-        <a href="https://linkedin.com/company/blytz-ventures" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-amber-400 transition-colors cursor-pointer">LinkedIn</a>
+      <div>
+        <h3 class="text-sm font-bold uppercase tracking-widest text-white/40 mb-6">Navigation</h3>
+        <nav class="flex flex-col gap-4">
+          <a href="#ventures" class="text-lg text-white/70 hover:text-white transition-colors">Ventures</a>
+          <a href="/contact" class="text-lg text-white/70 hover:text-white transition-colors">Contact</a>
+        </nav>
+      </div>
+      
+      <div>
+        <h3 class="text-sm font-bold uppercase tracking-widest text-white/40 mb-6">Companies</h3>
+        <nav class="flex flex-col gap-4">
+          <a href="https://blytz.cloud" target="_blank" rel="noopener noreferrer" class="text-lg text-white/70 hover:text-white transition-colors">Blytz Cloud</a>
+          <a href="https://blytz.market" target="_blank" rel="noopener noreferrer" class="text-lg text-white/70 hover:text-white transition-colors">Blytz Marketplace</a>
+          <a href="https://blytz.work" target="_blank" rel="noopener noreferrer" class="text-lg text-white/70 hover:text-white transition-colors">Blytz Work</a>
+          <a href="https://blytz.site" target="_blank" rel="noopener noreferrer" class="text-lg text-white/70 hover:text-white transition-colors">Blytz Site</a>
+        </nav>
       </div>
     </div>
     
-    <div class="mt-8 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-500">
-      <p>&copy; {new Date().getFullYear()} Blytz Ventures. All rights reserved.</p>
-      <p>Made with ❤️ from Southeast Asia</p>
+    <div class="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-sm text-white/40">
+        &copy; {new Date().getFullYear()} Blytz Ventures. All rights reserved.
+      </p>
+      <p class="text-sm text-white/40">
+        Innovate · Create · Scale
+      </p>
     </div>
   </div>
 </footer>
