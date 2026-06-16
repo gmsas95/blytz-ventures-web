@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="relative min-h-screen flex items-start overflow-hidden">
+<section class="relative min-h-screen flex items-center overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0">
     <img 
@@ -10,22 +10,18 @@
       class="w-full h-full object-cover"
       style="filter: blur(1px) brightness(0.7);"
     />
-    <!-- Dark overlay - lighter so image shows through -->
     <div class="absolute inset-0 bg-black/40"></div>
-    <!-- Gradient overlay - subtle vignette effect -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
   </div>
   
-  <!-- Subtle glow effects -->
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute top-20 left-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
     <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-yellow-500/5 rounded-full blur-3xl opacity-50 animate-pulse-slow" style="animation-delay: 2s;"></div>
   </div>
 
-  <div class="container-max relative z-10 pt-24 md:pt-32 pb-10 md:pb-16">
-    <div class="max-w-[900px]">
-      <!-- Badge -->
-      <div class="scroll-reveal inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full mb-4">
+  <div class="w-full relative z-10 px-6 md:px-16 lg:px-24 py-12 md:py-20">
+    <div class="max-w-[1100px]">
+      <div class="scroll-reveal inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full mb-6">
         <span class="relative flex h-1.5 w-1.5">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
           <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500"></span>
@@ -33,14 +29,12 @@
         <span class="text-xs font-medium text-white/70">Southeast Asia · 2024</span>
       </div>
       
-      <!-- Main headline -->
-      <h1 class="scroll-reveal text-[clamp(2rem,7vw,5rem)] leading-[0.9] tracking-[-0.04em] font-extrabold text-white mb-5 text-balance">
+      <h1 class="scroll-reveal text-[clamp(2rem,7vw,5rem)] leading-[0.9] tracking-[-0.04em] font-extrabold text-white mb-6 text-balance">
         BUILDING THE<br />
         <span class="gradient-text-hero">NEXT GENERATION</span>
       </h1>
       
-      <!-- Bento stats row -->
-      <div class="scroll-reveal flex flex-wrap gap-3 mb-6">
+      <div class="scroll-reveal flex flex-wrap gap-3 mb-8">
         <div class="bento-card px-4 py-3 flex items-center gap-3">
           <span class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">04</span>
           <div>
@@ -66,12 +60,10 @@
         </div>
       </div>
       
-      <!-- Subtitle -->
-      <p class="scroll-reveal text-lg text-white/50 max-w-2xl mb-6 leading-relaxed">
+      <p class="scroll-reveal text-lg text-white/50 max-w-2xl mb-8 leading-relaxed">
         Blytz Ventures is a startup studio building the next generation of companies across Southeast Asia — all ventures are currently under development.
       </p>
       
-      <!-- CTA Buttons -->
       <div class="scroll-reveal flex flex-wrap gap-3">
         <a href="#ventures" class="btn-primary group">
           <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,6 +87,5 @@
     </div>
   </div>
   
-  <!-- Bottom gradient fade -->
   <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
 </section>
