@@ -7,48 +7,90 @@ import Footer from '../components/Footer.astro';
 <Layout title="Contact - Blytz Ventures">
   <Header />
   <main class="pt-32 pb-20">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-8 text-center">Get in <span class="gradient-text">Touch</span></h1>
-      <p class="text-lg text-neutral-400 text-center mb-16">Our ventures are under development — but we're always open to conversations about partnerships, talent, and ideas.</p>
-      
-      <div class="bg-[#1a1a1a] p-8 md:p-12 rounded-2xl border border-neutral-800 max-w-2xl mx-auto">
-        <div
-          id="contact-form-status"
-          class:list={[
-            'mb-6 rounded-lg border px-4 py-3 text-sm',
-            'hidden',
-            'border-red-500/40 bg-red-500/10 text-red-200',
-          ]}
-          aria-live="polite"
-        />
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-center">Get in <span class="gradient-text">Touch</span></h1>
+      <p class="text-lg text-neutral-400 text-center mb-16 max-w-2xl mx-auto">
+        Our ventures are under development — but we're always open to conversations about partnerships, talent, and ideas.
+      </p>
 
-        <form class="space-y-6" data-contact-form>
-          <div>
-            <label for="name" class="block text-sm font-medium text-neutral-300 mb-2">Name</label>
-            <input type="text" id="name" name="name" required minlength="2" maxlength="100" class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Your name" />
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+        <!-- Contact info sidebar -->
+        <div class="lg:col-span-2 space-y-6">
+          <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-neutral-800">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-amber-400 mb-6">Contact Info</h3>
+
+            <div class="space-y-8">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2">Email</p>
+                <a href="mailto:hello@blytzventures.com" class="text-xl text-white hover:text-amber-400 transition-colors font-medium">
+                  hello@blytzventures.com
+                </a>
+              </div>
+
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2">WhatsApp</p>
+                <a href="https://wa.me/60198881005" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-xl text-white hover:text-amber-400 transition-colors font-medium group">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.104.543 4.082 1.496 5.814L.053 23.34a.5.5 0 00.607.607l5.525-1.443A11.957 11.957 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.2 0-4.244-.6-6-1.636l-.3-.182-3.995 1.044 1.07-3.896-.205-.322A9.957 9.957 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                  </svg>
+                  +60 19-881 005
+                  <span class="text-sm text-amber-400 group-hover:translate-x-1 transition-transform">↗</span>
+                </a>
+              </div>
+            </div>
           </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-neutral-300 mb-2">Email</label>
-            <input type="email" id="email" name="email" required maxlength="255" class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="you@example.com" />
+
+          <div class="bg-[#1a1a1a] p-8 rounded-2xl border border-neutral-800">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-amber-400 mb-4">Prefer Email?</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed">
+              Send us a message directly and we'll get back to you within 24 hours.
+            </p>
           </div>
-          <div>
-            <label for="subject" class="block text-sm font-medium text-neutral-300 mb-2">Subject</label>
-            <select id="subject" name="subject" required class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
-              <option value="">Select a topic</option>
-              <option value="partnership">Partnership / Investment</option>
-              <option value="careers">Careers</option>
-              <option value="collaboration">Collaboration / Pitch</option>
-              <option value="other">Other</option>
-            </select>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-3">
+          <div class="bg-[#1a1a1a] p-8 md:p-10 rounded-2xl border border-neutral-800">
+            <div
+              id="contact-form-status"
+              class:list={[
+                'mb-6 rounded-lg border px-4 py-3 text-sm',
+                'hidden',
+                'border-red-500/40 bg-red-500/10 text-red-200',
+              ]}
+              aria-live="polite"
+            />
+
+            <form class="space-y-5" data-contact-form>
+              <div>
+                <label for="name" class="block text-sm font-medium text-neutral-300 mb-1.5">Name</label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="100" class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-neutral-300 mb-1.5">Email</label>
+                <input type="email" id="email" name="email" required maxlength="255" class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-neutral-300 mb-1.5">Subject</label>
+                <select id="subject" name="subject" required class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
+                  <option value="">Select a topic</option>
+                  <option value="partnership">Partnership / Investment</option>
+                  <option value="careers">Careers</option>
+                  <option value="collaboration">Collaboration / Pitch</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-neutral-300 mb-1.5">Message</label>
+                <textarea id="message" name="message" rows="4" required minlength="10" maxlength="5000" class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors resize-none" placeholder="Tell us about your idea or inquiry..."></textarea>
+              </div>
+              <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-bold py-4 px-6 rounded-full hover:scale-105 transition-transform disabled:opacity-70 disabled:hover:scale-100" data-submit-button>
+                Send Message
+              </button>
+            </form>
           </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-neutral-300 mb-2">Message</label>
-            <textarea id="message" name="message" rows="5" required minlength="10" maxlength="5000" class="w-full bg-[#0a0a0a] border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors resize-none" placeholder="Tell us about your idea or inquiry..."></textarea>
-          </div>
-          <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold py-4 px-6 rounded-full hover:scale-105 transition-transform disabled:opacity-70 disabled:hover:scale-100" data-submit-button>
-            Send Message
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   </main>
@@ -58,33 +100,57 @@ import Footer from '../components/Footer.astro';
 <script lang="ts">
   const form = document.querySelector('[data-contact-form]');
   const status = document.querySelector('#contact-form-status');
+  const submitBtn = document.querySelector('[data-submit-button]');
 
-  const setStatus = (message: string, state: 'success' | 'error') => {
+  const showStatus = (message: string, state: 'success' | 'error') => {
     if (!status) return;
-
     status.textContent = message;
     status.classList.remove('hidden', 'border-emerald-500/40', 'bg-emerald-500/10', 'text-emerald-200', 'border-red-500/40', 'bg-red-500/10', 'text-red-200');
     status.classList.add('block');
-
     if (state === 'success') {
       status.classList.add('border-emerald-500/40', 'bg-emerald-500/10', 'text-emerald-200');
-      return;
+    } else {
+      status.classList.add('border-red-500/40', 'bg-red-500/10', 'text-red-200');
     }
-
-    status.classList.add('border-red-500/40', 'bg-red-500/10', 'text-red-200');
   };
 
-  form?.addEventListener('submit', (event) => {
+  form?.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (!(form instanceof HTMLFormElement)) return;
+    if (!form.reportValidity()) return;
 
-    if (!(form instanceof HTMLFormElement)) {
-      return;
+    if (submitBtn instanceof HTMLButtonElement) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
     }
 
-    if (!form.reportValidity()) {
-      return;
-    }
+    try {
+      const data = new FormData(form);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          subject: data.get('subject'),
+          message: data.get('message'),
+        }),
+      });
 
-    setStatus('Our contact form is being set up — all ventures are under development. Reach us directly at hello@blytzventures.com in the meantime.', 'error');
+      if (res.ok) {
+        showStatus('Thanks! Your message has been sent. We\'ll get back to you soon.', 'success');
+        form.reset();
+      } else {
+        const err = await res.json();
+        showStatus(err.error || 'Something went wrong. Please try again.', 'error');
+      }
+    } catch {
+      showStatus('Network error. Please check your connection and try again.', 'error');
+    } finally {
+      if (submitBtn instanceof HTMLButtonElement) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    }
   });
 </script>

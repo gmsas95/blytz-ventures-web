@@ -8,5 +8,12 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "blytz_ventures_contact",
+      "database_name": "blytz-ventures-contact",
+      "database_id": "ebee715f-81a3-4e87-992c-a7f8cf12e09a"
+    }
+  ]
 }
