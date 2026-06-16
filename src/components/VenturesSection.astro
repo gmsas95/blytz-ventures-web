@@ -52,9 +52,9 @@ const ventures = [
   <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none"></div>
   
   <div class="container-max relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
       <div class="lg:col-span-6">
-        <div class="scroll-reveal inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
+        <div class="scroll-reveal inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
           <svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
@@ -73,38 +73,38 @@ const ventures = [
     </div>
     
     <!-- Bento grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       {ventures.map((venture, i) => (
         <a 
           href={venture.url} 
-          class="scroll-reveal-delay group relative bento-card p-10 cursor-pointer overflow-hidden"
+          class="scroll-reveal-delay group relative bento-card p-8 cursor-pointer overflow-hidden"
         >
           <!-- Background gradient on hover -->
           <div class={`absolute inset-0 bg-gradient-to-br ${venture.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
           
           <!-- Large number -->
-          <span class={`text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br ${venture.gradient} opacity-10 absolute -top-4 -right-4`}>
+          <span class={`text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br ${venture.gradient} opacity-10 absolute -top-3 -right-3`}>
             {venture.number}
           </span>
           
           <div class="relative z-10">
-            <div class="flex items-start justify-between mb-8">
-              <div class="text-5xl">{venture.icon}</div>
-              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                <svg class="w-5 h-5 text-white/50 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-start justify-between mb-6">
+              <div class="text-4xl">{venture.icon}</div>
+              <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                <svg class="w-4 h-4 text-white/50 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </div>
             </div>
             
-            <h3 class="text-3xl font-extrabold text-white mb-2 tracking-tight group-hover:text-amber-400 transition-colors">
+            <h3 class="text-2xl font-extrabold text-white mb-1.5 tracking-tight group-hover:text-amber-400 transition-colors">
               {venture.name}
             </h3>
-            <p class={`text-lg font-semibold mb-4 bg-gradient-to-r ${venture.gradient} bg-clip-text text-transparent`}>
+            <p class={`text-base font-semibold mb-3 bg-gradient-to-r ${venture.gradient} bg-clip-text text-transparent`}>
               {venture.tagline}
             </p>
-            <div class="flex items-center gap-2 mt-4">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-wider">
+            <div class="flex items-center gap-2 mt-3">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10px] font-semibold uppercase tracking-wider">
                 <span class="relative flex h-1.5 w-1.5">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                   <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500"></span>
@@ -112,11 +112,11 @@ const ventures = [
                 Under Development
               </span>
             </div>
-            <p class="text-white/50 text-base leading-relaxed">{venture.desc}</p>
+            <p class="text-white/50 text-sm leading-relaxed">{venture.desc}</p>
             
-            <div class="mt-8 flex items-center gap-2 text-sm text-white/40 group-hover:text-white/70 transition-colors">
+            <div class="mt-6 flex items-center gap-2 text-xs text-white/40 group-hover:text-white/70 transition-colors">
               <span>Learn more</span>
-              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </div>

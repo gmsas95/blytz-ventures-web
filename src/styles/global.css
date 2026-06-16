@@ -27,7 +27,7 @@
   }
 
   .section-padding {
-    @apply py-32 md:py-48;
+    @apply py-20 md:py-28;
   }
 
   .container-max {
@@ -35,11 +35,11 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-white text-black font-bold py-5 px-10 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10 cursor-pointer;
+    @apply inline-flex items-center justify-center bg-white text-black font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10 cursor-pointer text-sm;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center border border-white/20 bg-white/5 backdrop-blur-xl text-white font-semibold py-5 px-10 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/40 cursor-pointer;
+    @apply inline-flex items-center justify-center border border-white/20 bg-white/5 backdrop-blur-xl text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white/40 cursor-pointer text-sm;
   }
 
   .bento-card {
@@ -112,14 +112,14 @@
 }
 
 .text-section {
-  font-size: clamp(2rem, 6vw, 5rem);
+  font-size: clamp(1.75rem, 5vw, 3.75rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 800;
 }
 
 .text-subhero {
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   line-height: 1.4;
   letter-spacing: -0.02em;
   font-weight: 300;
