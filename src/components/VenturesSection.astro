@@ -12,10 +12,10 @@ const ventures = [
     status: "under-development"
   },
   { 
-    name: "Blytz Marketplace", 
+    name: "blytz marketplace", 
     tagline: "E-Commerce & Live Auctions", 
     slug: "marketplace",
-    url: "/coming-soon?v=marketplace", 
+    url: "https://marketplace.blytz.cloud/", 
     desc: "Real-time bidding & Stripe Connect", 
     icon: "🛒",
     gradient: "from-yellow-400 to-amber-300",
@@ -23,10 +23,10 @@ const ventures = [
     status: "under-development"
   },
   { 
-    name: "Blytz Work", 
+    name: "blytz work", 
     tagline: "Fastest Job Matching", 
     slug: "work",
-    url: "/coming-soon?v=work", 
+    url: "https://work.blytz.cloud/", 
     desc: "From job posted to hired in 1 hour", 
     icon: "💼",
     gradient: "from-amber-300 to-orange-300",
@@ -61,13 +61,13 @@ const ventures = [
           <span class="text-xs font-semibold uppercase tracking-widest text-amber-400">Our Ventures</span>
         </div>
         <h2 class="scroll-reveal text-section text-white">
-          OUR<br />COMPANIES
+          OUR<br />VENTURES
         </h2>
       </div>
       
       <div class="lg:col-span-6 flex items-end">
         <p class="scroll-reveal text-subhero text-white/50 max-w-2xl">
-          We're building across AI, e-commerce, talent, and web platforms. Each venture is designed to solve real problems at scale.
+          Our internal startups are where we test ideas, validate markets, and refine the playbooks we also apply to client engagements.
         </p>
       </div>
     </div>
@@ -77,6 +77,8 @@ const ventures = [
       {ventures.map((venture, i) => (
         <a 
           href={venture.url} 
+          target={venture.url.startsWith('http') ? "_blank" : undefined}
+          rel={venture.url.startsWith('http') ? "noopener noreferrer" : undefined}
           class="scroll-reveal-delay group relative bento-card p-8 cursor-pointer overflow-hidden"
         >
           <!-- Background gradient on hover -->
