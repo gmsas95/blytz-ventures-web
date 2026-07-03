@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Header } from '../components/react/Header';
 import { Footer } from '../components/react/Footer';
+import { ContactForm } from '../components/react/ContactForm';
 ---
 
 <Layout title="Contact - Blytz Ventures">
@@ -55,43 +56,7 @@ import { Footer } from '../components/react/Footer';
         <!-- Form -->
         <div class="lg:col-span-3">
           <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
-            <div
-              id="contact-form-status"
-              class:list={[
-                'mb-6 rounded-lg border px-4 py-3 text-sm',
-                'hidden',
-                'border-red-200 bg-red-50 text-red-700',
-              ]}
-              aria-live="polite"
-            />
-
-            <form class="space-y-5" data-contact-form>
-              <div>
-                <label for="name" class="mb-1.5 block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" id="name" name="name" required minlength="2" maxlength="100" class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-colors focus:border-amber-500 focus:outline-none" placeholder="Your name" />
-              </div>
-              <div>
-                <label for="email" class="mb-1.5 block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" required maxlength="255" class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-colors focus:border-amber-500 focus:outline-none" placeholder="you@example.com" />
-              </div>
-              <div>
-                <label for="subject" class="mb-1.5 block text-sm font-medium text-gray-700">Subject</label>
-                <select id="subject" name="subject" required class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-colors focus:border-amber-500 focus:outline-none">
-                  <option value="">Select a topic</option>
-                  <option value="partnership">Partnership / Investment</option>
-                  <option value="careers">Careers</option>
-                  <option value="collaboration">Collaboration / Pitch</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label for="message" class="mb-1.5 block text-sm font-medium text-gray-700">Message</label>
-                <textarea id="message" name="message" rows="4" required minlength="10" maxlength="5000" class="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-colors focus:border-amber-500 focus:outline-none" placeholder="Tell us about your idea or inquiry..."></textarea>
-              </div>
-              <button type="submit" class="w-full rounded-lg bg-amber-600 px-6 py-4 font-bold text-white transition-colors hover:bg-amber-700 disabled:opacity-70" data-submit-button>
-                Send Message
-              </button>
-            </form>
+            <ContactForm client:load />
           </div>
         </div>
       </div>
@@ -99,61 +64,3 @@ import { Footer } from '../components/react/Footer';
   </main>
   <Footer client:load />
 </Layout>
-
-<script lang="ts">
-  const form = document.querySelector('[data-contact-form]');
-  const status = document.querySelector('#contact-form-status');
-  const submitBtn = document.querySelector('[data-submit-button]');
-
-  const showStatus = (message: string, state: 'success' | 'error') => {
-    if (!status) return;
-    status.textContent = message;
-    status.classList.remove('hidden', 'border-emerald-500/40', 'bg-emerald-500/10', 'text-emerald-200', 'border-red-500/40', 'bg-red-500/10', 'text-red-200');
-    status.classList.add('block');
-    if (state === 'success') {
-      status.classList.add('border-emerald-500/40', 'bg-emerald-500/10', 'text-emerald-200');
-    } else {
-      status.classList.add('border-red-500/40', 'bg-red-500/10', 'text-red-200');
-    }
-  };
-
-  form?.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    if (!(form instanceof HTMLFormElement)) return;
-    if (!form.reportValidity()) return;
-
-    if (submitBtn instanceof HTMLButtonElement) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-    }
-
-    try {
-      const data = new FormData(form);
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.get('name'),
-          email: data.get('email'),
-          subject: data.get('subject'),
-          message: data.get('message'),
-        }),
-      });
-
-      if (res.ok) {
-        showStatus('Thanks! Your message has been sent. We\'ll get back to you soon.', 'success');
-        form.reset();
-      } else {
-        const err = await res.json();
-        showStatus(err.error || 'Something went wrong. Please try again.', 'error');
-      }
-    } catch {
-      showStatus('Network error. Please check your connection and try again.', 'error');
-    } finally {
-      if (submitBtn instanceof HTMLButtonElement) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-      }
-    }
-  });
-</script>
