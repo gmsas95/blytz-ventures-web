@@ -30,15 +30,24 @@ const ventures = [
   },
 ];
 
-// Duplicate items so the carousel can loop infinitely while showing 3 at once.
+// Duplicate items so the carousel can loop infinitely.
 const items = [...ventures, ...ventures];
-const VISIBLE = 3;
+
+const getVisible = () => (typeof window !== "undefined" && window.innerWidth < 768 ? 1 : 3);
 
 export const Ventures = () => {
   const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setVisible(getVisible());
+    const onResize = () => setVisible(getVisible());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   const goTo = useCallback((index: number) => {
     setIsTransitioning(true);
@@ -104,7 +113,7 @@ export const Ventures = () => {
               ref={trackRef}
               className="flex"
               style={{
-                transform: `translateX(-${(current * 100) / VISIBLE}%)`,
+                transform: `translateX(-${(current * 100) / visible}%)`,
                 transition: isTransitioning ? "transform 500ms ease-in-out" : "none",
               }}
             >
