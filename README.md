@@ -1,3 +1,12 @@
+---
+type: readme
+title: Blytz Ventures
+resource: blytz-ventures-web
+description: "Official company landing page for Blytz Ventures — building the future, one venture at a time."
+tags: [tailwind]
+updated: 2026-06-18
+---
+
 # Blytz Ventures
 
 Official company landing page for Blytz Ventures — building the future, one venture at a time.
