@@ -12,23 +12,41 @@ import IconArrow from "../components/site/IconArrow.astro";
   <main id="main">
     <section class="hero">
       <div class="rail rail-wide hero-inner">
-        <h1>AI does the work.<br />You keep the authority.</h1>
-        <p class="hero-support">
-          Blytz Ventures is the studio behind <a href="https://blytz.app">blytz.app</a> and
-          <a href="https://blytz.work">blytz.work</a> — governed AI products for marketing operations.
-        </p>
-        <div class="hero-doors">
-          <a class="door" href="https://blytz.app">
-            <span class="door-name">blytz<span class="door-tld">.app</span></span>
-            <span class="door-line">Connect your AI agent to Meta Ads — every change waits for your approval.</span>
-            <span class="door-go">Open blytz.app <IconArrow size={10} /></span>
-          </a>
-          <a class="door" href="https://blytz.work">
-            <span class="door-name">blytz<span class="door-tld">.work</span></span>
-            <span class="door-line">Hire a hosted marketing department that plans, drafts, and asks before it acts.</span>
-            <span class="door-go">Open blytz.work <IconArrow size={10} /></span>
-          </a>
+        <div class="hero-copy">
+          <h1>AI does the work.<br />You keep the authority.</h1>
+          <p class="hero-support">
+            Blytz Ventures is the studio behind <a href="https://blytz.app">blytz.app</a> and{" "}
+            <a href="https://blytz.work">blytz.work</a> — governed AI products for marketing operations.
+          </p>
+          <div class="hero-doors">
+            <a class="door" href="https://blytz.app">
+              <span class="door-name">blytz<span class="door-tld">.app</span></span>
+              <span class="door-line">Connect your AI agent to Meta Ads — every change waits for your approval.</span>
+              <span class="door-go">Open blytz.app <IconArrow size={10} /></span>
+            </a>
+            <a class="door" href="https://blytz.work">
+              <span class="door-name">blytz<span class="door-tld">.work</span></span>
+              <span class="door-line">Hire a hosted marketing department that plans, drafts, and asks before it acts.</span>
+              <span class="door-go">Open blytz.work <IconArrow size={10} /></span>
+            </a>
+          </div>
         </div>
+
+        <figure class="vignette hero-media" aria-label="Captured blytz.app workflow">
+          <div class="vignette-chrome">
+            <span class="vignette-title">blytz://capture — blytz.app</span>
+            <span class="chip chip-quiet"><span class="dot"></span>Product capture</span>
+          </div>
+          <img
+            class="vignette-media"
+            src="/media/blytz-app-demo.webp"
+            alt="blytz.app workflow demo: a sample ad account's campaign table with Prospecting broad marked as needing attention, next to the read, prepare, approve steps"
+            width="2432"
+            height="1390"
+            loading="eager"
+          />
+          <figcaption>Captured from blytz.app · sample workflow, no live account</figcaption>
+        </figure>
       </div>
     </section>
 

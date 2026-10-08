@@ -90,13 +90,13 @@ components:
 
 This site is a sibling of blytz.app, not a lookalike: it consumes the same canonical token roles (the `--xt-*` family defined in `adsintel/site/src/styles/tokens.css`) so the company and its products read as one system. The mode is Persuade, but the material is operational — a marketing surface that behaves like a console. Near-black grounds, one acid signal color, mono type as the house voice, ruled regions instead of floating cards.
 
-The page tells its story through product stages: one line of company, then each product walks the full width with its own live-status, its own verdict, and its own door. The blytz.app stage carries the signature moment — a prepared campaign change held behind "Awaiting your approval" — the human-in-the-loop mechanism rendered as interface, not described as prose.
+The page tells its story through product stages: a full-viewport hero with the company line and a real blytz.app workflow capture, then each product walks the full width with its own live-status, its own verdict, and its own door — shown through real captures of the live products.
 
 **Key Characteristics:**
 - One accent, earned: signal lime marks only actions, live states, and the human-approval moment.
 - Ruled, not rounded: structure comes from 1px rules and regions, radii stay at 1–2px.
 - Mono voice: JetBrains Mono carries labels, body, data; Schibsted Grotesk appears only as display.
-- Honest surfaces: vignettes are labeled illustrative; no proof claims ship.
+- Honest surfaces: media are real captures of the live products with provenance captions; no proof claims ship.
 
 ## Colors
 
@@ -141,7 +141,7 @@ A committed single-accent palette: near-black neutrals plus acid lime. Dark is t
 
 ## Layout
 
-A rail model: `.rail` (max 76rem) for interior pages, `.rail-wide` (max 84rem) for the home surface and header/footer, with a fluid gutter `clamp(1.25rem, 4vw, 3rem)`. Product stages are two-column grids (5fr copy / 7fr vignette) that mirror—copy left for blytz.app, vignette left for blytz.work—and collapse to a single column below 960px. Vertical rhythm runs on a 4px-step scale with 96px stage padding desktop, 64px mobile. Space above a heading exceeds space below it (24px above tagline scale vs 12px below).
+A rail model: `.rail` (max 76rem) for interior pages, `.rail-wide` (max 84rem) for the home surface and header/footer, with a fluid gutter `clamp(1.25rem, 4vw, 3rem)`. The hero fills the viewport (`100svh` minus the header) as a two-column grid — 6fr copy / 5fr media — collapsing to one column below 1080px. Product stages are two-column grids (5fr copy / 7fr media) that mirror—copy left for blytz.app, media left for blytz.work—and collapse to a single column below 960px. Vertical rhythm runs on a 4px-step scale with 128px stage padding desktop and 64px mobile. Space above a heading exceeds space below it (24px above tagline scale vs 12px below).
 
 ## Elevation & Depth
 
@@ -161,7 +161,7 @@ A sharp, industrial geometry: controls 1px radius, panels 2px, the sole round el
 
 ### Chips
 - **Style:** 1px border, 11px uppercase mono, 4px × 8px padding, transparent ground. `chip-signal` uses signal text with a 38% signal border; `chip-quiet` uses muted text on hairline.
-- **State:** a 6px dot leads live statuses; the awaiting-approval chip's dot pulses (1.8s alternate) — the page's one authored motion. Text always states the status, so color is never the only cue.
+- **State:** a 6px dot leads live statuses; the Meta Ads live chip's dot pulses (1.8s alternate) — the page's one authored motion. Text always states the status, so color is never the only cue.
 
 ### Cards / Containers
 There are no cards. Regions are: **console vignettes** (1px strong-hairline panels with a #18181b chrome strip, shadow-panel, radii 2px), and **stage bands** separated by hairline rules. Vignettes always close with a figcaption labeling them illustrative.
@@ -174,15 +174,16 @@ There are no cards. Regions are: **console vignettes** (1px strong-hairline pane
 ### Navigation
 Sticky header, #030303 at 94% with an 8px backdrop blur, 1px bottom hairline. Wordmark is mono 700 with the `://` in signal. Nav links are muted mono; the two product links carry the arrow icon; Contact is a bordered box that turns signal on hover. Below 560px the header wraps to two rows; no hamburger, no JS.
 
-### The Console Vignette (signature)
-The system's defining component: a dark console panel with chrome strip (`blytz://console` / `blytz://workboard`), ruled data rows with tabular numerals, an inset prepared-change region, a three-step flow strip, and a labeled figcaption. This is how the products are shown — at working scale, honestly labeled, never as marketing screenshots.
+**The Console Vignette (signature)**
+
+The system's defining component: a captured interface panel. Real screenshots of the live products (stored in `public/media/`, WebP at 2x) sit inside the console frame — a `#18181b` chrome strip carrying `blytz://capture — <product>` and a status chip, then the image, then a caption with provenance ("Captured from blytz.app · October 2026") and any illustrative status. Chrome wraps below 560px. This is how the products are shown — at working scale, honestly labeled, never as marketing renders.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** consume `--xt-*`/`--site-*` tokens only; every new page starts from `src/styles/tokens.css`.
 - **Do** keep the page static: no client JS except the contact form's submission script.
-- **Do** label any interface vignette "Illustrative" with a figcaption.
+- **Do** label every captured interface with its provenance and illustrative status in the figcaption.
 - **Do** use the arrow SVG (`IconArrow.astro`) for every outbound/action arrow; one stroke weight, one size family.
 - **Do** theme browser surfaces: selection, caret, scrollbar, focus ring are all signal-derived.
 

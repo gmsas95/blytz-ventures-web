@@ -45,4 +45,5 @@ Deploys via Cloudflare Workers (`wrangler deploy`, worker `blytz-ventures-web`, 
 
 - [`DESIGN.md`](DESIGN.md) — the visual system record (tokens, type, components, rules)
 - [`PRODUCT.md`](PRODUCT.md) — product truth (audience, positioning, constraints)
-- Public-site rule: static semantic Astro, site-owned tokens, no client-side JS by default; every interface vignette ships labeled "illustrative".
+- Public-site rule: static semantic Astro, site-owned tokens, no client-side JS by default; every captured interface ships with provenance and its illustrative status in the caption.
+- Product media: real captures of the live products (`public/media/`, WebP at 2x), framed in the console chrome — no synthetic screenshots.
