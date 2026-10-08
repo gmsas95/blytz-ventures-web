@@ -1,78 +1,48 @@
-# Blytz Ventures
+# Blytz Ventures — company site
 
-Official company landing page for **Blytz Ventures** — a startup studio and technology consultancy building ventures and shipping products across Southeast Asia.
+Company home for **Blytz Ventures**, the AI product studio behind [blytz.app](https://blytz.app) and [blytz.work](https://blytz.work). A static Astro site drawn in the blytz.app "System Terminal" visual family, deployed as a Cloudflare Worker with a D1-backed contact API.
 
-Live site: [https://blytz-ventures-web.blytzventures.workers.dev](https://blytz-ventures-web.blytzventures.workers.dev)
+Live: [https://blytzventures.com](https://blytzventures.com)
 
-## Tech Stack
+## Stack
 
-- **[Astro](https://astro.build/)** — Static site generation
-- **[React 19](https://react.dev/)** — Interactive UI islands
-- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling
-- **[Cloudflare Workers](https://workers.cloudflare.com/)** — Edge hosting & contact form API
-- **[Cloudflare D1](https://developers.cloudflare.com/d1/)** — Contact form submissions database
-- **[Untitled UI Icons](https://untitledui.com/)** — Iconography
+- **Astro 7** — static output, no client framework
+- **Self-hosted fonts** — Schibsted Grotesk Variable + JetBrains Mono via Fontsource
+- **Cloudflare Workers + Static Assets** (`wrangler`), **D1** for contact submissions
+- **Site-owned tokens** — `src/styles/tokens.css` mirrors the canonical blytz.app public-site roles (`--xt-*`); no Tailwind, no React, no Astryx imports
 
-## Getting Started
-
-Requires [pnpm](https://pnpm.io/).
-
-```bash
-# Install dependencies
-pnpm install
-
-# Start dev server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Preview production build
-pnpm preview
-
-# Deploy to Cloudflare Workers
-pnpm deploy
-```
-
-## Project Structure
+## Structure
 
 ```
 src/
-├── components/
-│   ├── react/        # React 19 interactive islands (Header, Hero, Services, Ventures, CTA, Footer)
-│   ├── base/         # Untitled UI base components
-│   ├── foundations/  # Icons, logos, featured icons
-│   ├── marketing/    # Marketing section templates
-│   └── *.astro       # Legacy Astro components
-├── layouts/          # Page layout wrappers
-├── pages/            # Route-based pages (Astro)
-├── lib/              # Shared utilities
-├── styles/           # Global CSS
-└── _worker.js        # Cloudflare Worker entry point (contact API + static assets)
+├── components/site/    # Header, Footer, IconArrow, AppStage, WorkStage
+├── layouts/Layout.astro
+├── pages/              # index, contact, blog
+├── styles/             # tokens.css, global.css
+└── _worker.js          # /api/contact + static asset serving
+public/favicon.svg
+wrangler.jsonc          # worker config (assets: dist/, D1 binding)
 ```
 
-## Ventures
+## Commands
 
-- **[blytz cloud](https://blytz.cloud)** — AI assistant platform *(coming soon)*
-- **[blytz marketplace](https://marketplace.blytz.cloud/)** — E-commerce & live auctions
-- **[blytz work](https://work.blytz.cloud/)** — Fastest job matching
-- **blytz site** — Website builder platform *(coming soon)*
-
-## Contact Form
-
-The contact form on `/contact` posts to `/api/contact`, handled by `src/_worker.js`. Submissions are stored in the `blytz_ventures_contact` D1 database (`contact_submissions` table).
-
-## Deployment
-
-The site is deployed to Cloudflare Workers with static assets. The build pipeline runs:
+Requires [pnpm](https://pnpm.io/) (or `npx pnpm@9`).
 
 ```bash
-pnpm run build      # Generate static site into dist/
-npx wrangler deploy # Deploy Worker + assets
+pnpm install     # install dependencies
+pnpm dev         # dev server at localhost:4321
+pnpm build       # static build to dist/
+pnpm preview     # preview the build
+pnpm check       # astro type/diagnostic check
+pnpm deploy      # build + wrangler deploy
 ```
 
-Configuration is in [`wrangler.jsonc`](./wrangler.jsonc).
+## Deploy
 
----
+Deploys via Cloudflare Workers (`wrangler deploy`, worker `blytz-ventures-web`, assets from `dist/`). Push to `main` is the production path through Workers Builds. Contact submissions land in the `blytz-ventures-contact` D1 database via `POST /api/contact`.
 
-© Blytz Ventures. All rights reserved.
+## Design & product docs
+
+- [`DESIGN.md`](DESIGN.md) — the visual system record (tokens, type, components, rules)
+- [`PRODUCT.md`](PRODUCT.md) — product truth (audience, positioning, constraints)
+- Public-site rule: static semantic Astro, site-owned tokens, no client-side JS by default; every interface vignette ships labeled "illustrative".

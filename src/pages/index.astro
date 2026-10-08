@@ -1,20 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Header } from '../components/react/Header';
-import { Hero } from '../components/react/Hero';
-import { Services } from '../components/react/Services';
-import { Ventures } from '../components/react/Ventures';
-import { CTA } from '../components/react/CTA';
-import { Footer } from '../components/react/Footer';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/site/Header.astro";
+import Footer from "../components/site/Footer.astro";
+import AppStage from "../components/site/AppStage.astro";
+import WorkStage from "../components/site/WorkStage.astro";
+import IconArrow from "../components/site/IconArrow.astro";
 ---
 
-<Layout title="Blytz Ventures - Startup Studio & Technology Consultancy">
-  <Header client:load />
-  <main>
-    <Hero client:load />
-    <Services client:load />
-    <Ventures client:load />
-    <CTA client:load />
+<Layout>
+  <Header />
+  <main id="main">
+    <section class="hero">
+      <div class="rail rail-wide hero-inner">
+        <h1>AI does the work.<br />You keep the authority.</h1>
+        <p class="hero-support">
+          Blytz Ventures is the studio behind <a href="https://blytz.app">blytz.app</a> and
+          <a href="https://blytz.work">blytz.work</a> — governed AI products for marketing operations.
+        </p>
+        <div class="hero-doors">
+          <a class="door" href="https://blytz.app">
+            <span class="door-name">blytz<span class="door-tld">.app</span></span>
+            <span class="door-line">Connect your AI agent to Meta Ads — every change waits for your approval.</span>
+            <span class="door-go">Open blytz.app <IconArrow size={10} /></span>
+          </a>
+          <a class="door" href="https://blytz.work">
+            <span class="door-name">blytz<span class="door-tld">.work</span></span>
+            <span class="door-line">Hire a hosted marketing department that plans, drafts, and asks before it acts.</span>
+            <span class="door-go">Open blytz.work <IconArrow size={10} /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <AppStage />
+    <WorkStage />
+
+    <section class="partner" aria-labelledby="partner-title">
+      <div class="rail rail-wide partner-inner">
+        <h2 id="partner-title">Work with the studio</h2>
+        <p>
+          Besides building its own products, Blytz Ventures partners with selected teams on product
+          strategy, design, and engineering.
+        </p>
+        <a class="partner-mail" href="mailto:hello@blytzventures.com">hello@blytzventures.com <IconArrow size={12} /></a>
+      </div>
+    </section>
   </main>
-  <Footer client:load />
+  <Footer />
 </Layout>

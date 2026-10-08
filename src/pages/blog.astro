@@ -1,28 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Header } from '../components/react/Header';
-import { Footer } from '../components/react/Footer';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/site/Header.astro";
+import Footer from "../components/site/Footer.astro";
+
+const description = "Notes from the Blytz Ventures studio on AI products, marketing operations, and building in Southeast Asia.";
 ---
 
-<Layout title="Blog - Blytz Ventures">
-  <Header client:load />
-  <main class="bg-white pb-20 pt-24">
-    <div class="container mx-auto max-w-4xl px-4 md:px-8">
-      <div class="text-center">
-        <p class="text-sm font-semibold text-amber-600">Blog</p>
-        <h1 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">Insights & updates</h1>
-        <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-          Thoughts from the Blytz Ventures team on startups, product, and technology.
-        </p>
-      </div>
+<Layout title="Blog — Blytz Ventures" description={description}>
+  <Header />
+  <main id="main" class="page">
+    <div class="rail page-inner">
+      <h1>Blog</h1>
+      <p class="page-lede">Notes from the studio on AI products, marketing operations, and building in Southeast Asia.</p>
 
-      <div class="mt-20 rounded-2xl border border-gray-200 bg-gray-50/50 py-20 text-center">
-        <div class="inline-flex items-center gap-3 text-gray-500">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-          <span>Coming soon — stay tuned for updates</span>
+      <div class="blog-empty">
+        <span class="label">Status</span>
+        <p>Nothing published yet — new writing will land here. The fastest way to see what we are building is to open a product.</p>
+        <div class="stage-actions">
+          <a class="btn btn-ghost" href="https://blytz.app">blytz.app</a>
+          <a class="btn btn-ghost" href="https://blytz.work">blytz.work</a>
         </div>
       </div>
     </div>
   </main>
-  <Footer client:load />
+  <Footer />
 </Layout>

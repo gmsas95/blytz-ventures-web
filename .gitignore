@@ -36,3 +36,5 @@ worker-configuration.d.ts
 
 # misc
 roots/
+# impeccable dev artifacts
+.impeccable/

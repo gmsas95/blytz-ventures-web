@@ -1,0 +1,48 @@
+---
+import IconArrow from "./IconArrow.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="rail rail-wide footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="wordmark" href="/" aria-label="Blytz Ventures — home">BLYTZ<span class="wm-slash">://</span>VENTURES</a>
+        <p>An AI product studio based in Malaysia. Agents do the work; people keep the authority.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Products</h3>
+        <ul>
+          <li>
+            <a href="https://blytz.app">blytz.app <IconArrow size={10} /></a>
+          </li>
+          <li>
+            <a href="https://blytz.work">blytz.work <IconArrow size={10} /></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li>
+            <a href="mailto:hello@blytzventures.com">hello@blytzventures.com</a>
+          </li>
+          <li>
+            <a href="https://wa.me/60198881005">+60 19-888 1005</a>
+          </li>
+          <li>
+            <a href="/contact">Contact form</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <span>© {year} Blytz Ventures</span>
+      <a href="https://linkedin.com/company/blytz-ventures">LinkedIn</a>
+    </div>
+  </div>
+</footer>

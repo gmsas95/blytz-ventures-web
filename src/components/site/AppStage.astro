@@ -1,0 +1,61 @@
+---
+import IconArrow from "./IconArrow.astro";
+---
+
+<section class="stage stage-app" id="blytz-app" aria-labelledby="blytz-app-name">
+  <div class="rail rail-wide stage-inner">
+    <div class="stage-copy">
+      <div class="product-head">
+        <h2 class="product-name" id="blytz-app-name">blytz<span class="product-tld">.app</span></h2>
+        <span class="chip chip-signal"><span class="dot"></span>Meta Ads live</span>
+      </div>
+      <p class="stage-tagline">Governed access between your AI agent and Meta Ads.</p>
+      <p class="stage-body">
+        One MCP connection lets your assistant read campaign performance and prepare changes.
+        Nothing executes until you approve it — every action joins your audit trail.
+      </p>
+      <div class="stage-actions">
+        <a class="btn btn-primary" href="https://blytz.app">Connect Meta Ads <IconArrow size={11} /></a>
+        <a class="btn btn-ghost" href="https://blytz.app">Explore the workflow <IconArrow size={11} /></a>
+      </div>
+      <p class="stage-note">TikTok and Google Ads are planned channels</p>
+    </div>
+
+    <div class="stage-stage">
+      <figure class="vignette" aria-label="Illustrative blytz.app console">
+        <div class="vignette-chrome">
+          <span class="vignette-title">blytz://console</span>
+          <span class="chip chip-signal"><span class="dot"></span>Meta Ads</span>
+        </div>
+        <div class="vignette-body">
+          <div class="v-row v-head" aria-hidden="true">
+            <span>Campaign</span><span>Spend</span><span>Cost / result</span>
+          </div>
+          <div class="v-row">
+            <span>Retargeting</span><span>$240</span><span>$8</span>
+          </div>
+          <div class="v-row">
+            <span>Brand search</span><span>$180</span><span>$12</span>
+          </div>
+          <div class="v-row v-attention">
+            <span>Prospecting broad <em>· needs attention</em></span><span>$420</span><span>$35</span>
+          </div>
+          <div class="v-prepared">
+            <div class="v-prepared-head">
+              <span class="label">Prepared change</span>
+              <span class="chip chip-signal"><span class="dot dot-pulse"></span>Awaiting your approval</span>
+            </div>
+            <p class="v-prepared-move">Prospecting broad — <s>active</s> → <b>paused</b></p>
+            <p>Only this campaign. The change runs after you confirm.</p>
+          </div>
+          <ol class="v-flow">
+            <li>01 · Read performance</li>
+            <li>02 · Prepare a change</li>
+            <li>03 · Approve &amp; execute</li>
+          </ol>
+        </div>
+        <figcaption>Illustrative interface · sample values · no live account</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

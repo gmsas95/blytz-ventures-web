@@ -1,0 +1,107 @@
+/*
+ * Blytz Ventures — site-owned tokens.
+ * Mirrors the canonical public-site roles from the blytz.app public site
+ * (adsintel/site/src/styles/tokens.css) so both surfaces read as one family.
+ * No component may introduce ad hoc colors, spacing, radii, or shadows.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* System Terminal palette */
+  --xt-signal: #e5ec5b;
+  --xt-signal-hover: #f1f58a;
+  --xt-signal-soft: #292b13;
+  --xt-on-signal: #050505;
+  --xt-on-signal-muted: #30320d;
+  --xt-background: #030303;
+  --xt-background-raised: #050505;
+  --xt-surface: #18181b;
+  --xt-surface-raised: #202024;
+  --xt-text: #ffffff;
+  --xt-text-muted: #a1a1aa;
+  --xt-line: #27272a;
+  --xt-line-strong: #3f3f46;
+  --xt-grid: rgb(229 236 91 / 5%);
+  --xt-warning: #e5ec5b;
+  --xt-warning-ink: #050505;
+  --xt-danger: #ff6b7a;
+  --xt-danger-soft: #301417;
+
+  /* Typography */
+  --font-marketing: "Schibsted Grotesk Variable", sans-serif;
+  --font-display: "JetBrains Mono", monospace;
+  --font-body: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-size-xs: 0.6875rem;
+  --font-size-sm: 0.75rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.75rem;
+  --font-size-page-hero: clamp(2.5rem, 6.5vw, 5rem);
+  --font-size-marketing-hero: clamp(3rem, 5.3vw, 5rem);
+  --font-size-product: clamp(2rem, 3.4vw, 2.75rem);
+  --line-tight: 1.04;
+  --line-heading: 1.08;
+  --line-body: 1.6;
+  --tracking-marketing: -0.035em;
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.08em;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+
+  /* Shape & depth */
+  --radius-control: 1px;
+  --radius-panel: 2px;
+  --radius-round: 9999px;
+  --shadow-panel: 0 1.5rem 4rem -2rem rgb(0 0 0 / 80%);
+  --shadow-header: 0 1rem 2.5rem -2rem rgb(0 0 0 / 88%);
+
+  /* Layout */
+  --rail-max: 76rem;
+  --rail-home-max: 84rem;
+  --rail-gutter: clamp(1.25rem, 4vw, 3rem);
+  --measure-copy: 65ch;
+  --measure-tight: 50ch;
+
+  /* Motion */
+  --motion-fast: 160ms;
+  --motion-field: 720ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Route-neutral roles consumed by every page */
+  --site-page: var(--xt-background);
+  --site-page-raised: var(--xt-background-raised);
+  --site-surface: var(--xt-surface);
+  --site-surface-raised: var(--xt-surface-raised);
+  --site-text: var(--xt-text);
+  --site-text-muted: var(--xt-text-muted);
+  --site-rule: var(--xt-line);
+  --site-rule-strong: var(--xt-line-strong);
+  --site-accent: var(--xt-signal);
+  --site-accent-hover: var(--xt-signal-hover);
+  --site-accent-soft: var(--xt-signal-soft);
+  --site-on-accent: var(--xt-on-signal);
+  --site-on-accent-muted: var(--xt-on-signal-muted);
+  --site-danger: var(--xt-danger);
+  --site-danger-soft: var(--xt-danger-soft);
+  --site-grid: var(--xt-grid);
+  --site-chip-signal-border: rgb(229 236 91 / 38%);
+  --site-chip-warn-border: rgb(229 236 91 / 24%);
+  --site-header-veil: rgb(3 3 3 / 94%);
+}
